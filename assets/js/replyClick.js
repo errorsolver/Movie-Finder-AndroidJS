@@ -1,8 +1,8 @@
-import {
-    getGenre
-} from "./getGenre"
+// import {
+//     getGenre
+// } from "./getGenre"
 
-function reply_click(id) {
+export function reply_click(id) {
     console.log(id);
     if (movies_id) {
         alert(id);
