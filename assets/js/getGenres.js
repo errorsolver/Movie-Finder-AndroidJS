@@ -1,7 +1,22 @@
 const BASE_URL = `https://api.themoviedb.org/3/`;
 const API_KEY = `api_key=2687b1e38c449c31c16ae0f7f801fd75`;
 
-export async function getGenre(genresList) {
+let genresList = document.getElementById(`genres`);
+if (genresList != null) {
+    console.log("GenreList found: ", genresList);
+    getGenre(genresList);
+}
+
+function reply_click(id) {
+    console.log(id);
+    if (movies_id) {
+        alert(id);
+        getGenre(id);
+        genreId = id
+    }
+}
+
+async function getGenre(genresList) {
     let genres = [];
     const URL_genre = `genre/movie/list?`;
     let promise = await fetch(BASE_URL+URL_genre+API_KEY)
