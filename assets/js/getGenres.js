@@ -2,6 +2,7 @@ const BASE_URL = `https://api.themoviedb.org/3/`;
 const API_KEY = `api_key=2687b1e38c449c31c16ae0f7f801fd75`;
 
 let genresList = document.getElementById(`genres`);
+
 if (genresList != null) {
     console.log("GenreList found: ", genresList);
     getGenre(genresList);
@@ -9,11 +10,13 @@ if (genresList != null) {
 
 function reply_click(id) {
     console.log(id);
-    if (movies_id) {
+    localStorage.setItem("genreId", id);
+    console.log("Local Storage: ",localStorage.getItem("genreId"));
+    // if (movies_id) {
         alert(id);
         getGenre(id);
         genreId = id
-    }
+    // }
 }
 
 async function getGenre(genresList) {
